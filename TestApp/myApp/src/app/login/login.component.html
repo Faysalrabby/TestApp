@@ -1,0 +1,13 @@
+<div class="login">
+    <div class="log">
+        <div class="form-group col-md-4">
+            <label>UserName</label>
+            <input type="text" class="form-control" [(ngModel)]="LoginInfo.userName" placeholder="Enter UserName">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Password</label>
+            <input type="text" class="form-control" [(ngModel)]="LoginInfo.password" placeholder="Enter Password">
+        </div>
+        <button type="button" class="btn btn-success" (click)="onLogin()">Login</button>
+    </div>           
+</div>

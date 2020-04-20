@@ -1,0 +1,16 @@
+.login{
+    background-image: url("../../assets/background-img.jpg");
+    height: 100%;
+    width: 100%;
+}
+.log{
+  margin: auto;
+  padding: 10px;
+}
+.btn-link{
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: powderblue;
+    background-image: linear-gradient(45deg, lightsalmon,tomato);
+}

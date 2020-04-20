@@ -1,0 +1,65 @@
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>User Registration Form!</h1>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="userForm" (ngSubmit)="onSave()">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label>UserName                          
+                        </label>
+                        <input type="text" class="form-control"  formControlName="userName">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Password
+                        </label>
+                        <input type="password" class="form-control"  formControlName="password">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label>Mobile
+                        </label>
+                        <input type="text" class="form-control"  formControlName="mobile">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Email
+                        </label>
+                        <input type="text" class="form-control"  formControlName="email">
+                    </div>       
+                </div>
+                             
+                <button type="submit" [disabled]=!userForm.valid class="btn btn-success">Submit</button>
+            </form>
+        </div>
+        <div class="card-footer">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>UserName</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor ="let usr of userList; let i =index"[attr.data-index]="i">
+                            <td>{{i+1}}</td>
+                            <td>{{usr.userName}}</td>
+                            <td>{{usr.mobile}}</td>
+                            <td>{{usr.email}}</td>
+                            <td>
+                                <button type="button" (click)="onEdit(usr)" class="btn btn-warning">Edit</button>
+                                <button type="button" (click)="onDelete(usr)" class="btn btn-danger">Delete</button>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>
